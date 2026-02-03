@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Управління продуктами</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Керування продуктами</h1>
+            <p>CRUD додаток з використанням Docker, PostgreSQL та Node.js</p>
+        </header>
+
+        <main>
+
+            <section class="card">
+                <h2>➕ Додати новий продукт</h2>
+                <form id="productForm">
+                    <div class="form-group">
+                        <label for="name">Назва продукту:</label>
+                        <input type="text" id="name" placeholder="Наприклад: Ноутбук" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="price">Ціна ($):</label>
+                        <input type="number" id="price" placeholder="0.00" step="0.01" min="0" required>
+                    </div>
+                    
+                    <button type="submit" class="btn-primary">Додати продукт</button>
+                </form>
+            </section>
+
+            <section class="card">
+                <div class="header-row">
+                    <h2>📦 Список продуктів</h2>
+                    <button id="refreshBtn" class="btn-secondary">🔄 Оновити список</button>
+                </div>
+                
+                <div id="productList" class="product-list">
+                    <div class="loading">Завантаження продуктів...</div>
+                </div>
+            </section>
+
+            <section class="card info">
+                <h2>ℹ️ Інформація про систему</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <div class="info-label">База даних:</div>
+                        <div class="info-value">PostgreSQL в Docker</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Сервер:</div>
+                        <div class="info-value">Node.js + Express</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Клієнт:</div>
+                        <div class="info-value">HTML + JavaScript</div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-label">Контейнери:</div>
+                        <div class="info-value">3 сервіси в Docker Compose</div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>Проект для екзамена з Docker | Контейнеризація та оркестрація</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
